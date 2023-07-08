@@ -17,8 +17,7 @@ const Main = () => {
             console.log(latitude, longitude)
         })
     }, [])
-// const cords = {lat: 17.5008826, lng: 78.4567522}
-    // console.log(coordinates)
+// console.log(traveldata)
     useEffect(() => {
         fetchUrl(bounds.sw, bounds.ne)
             .then((data) => {
@@ -26,8 +25,6 @@ const Main = () => {
             })
             .catch((err) => err.message)
     }, [coordinates, bounds])
-
-    console.log(traveldata)
     return (
         <div>
             <CssBaseline />
@@ -40,7 +37,9 @@ const Main = () => {
                         <Mapnavigation
                             setCoordinates={setCoordinates}
                             setBounds={setBounds} 
-                            coordinates={coordinates}/>
+                            coordinates={coordinates}
+                            traveldata={traveldata}/>
+                            
                 </Grid>
             </Grid>
         </div>
