@@ -3,9 +3,9 @@ import GoogleMapReact from 'google-map-react';
 import { Box, Paper, Typography, Rating, useMediaQuery } from '@mui/material';
 import LocationOnOutlineIcon from '@mui/icons-material/LocationOnOutlined';
 // import type { TypeMapProps } from '../@types';
-import styles from './Mapstyles.css';
+import styles from './Mapstyles.module.css';
 
-const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata }) => {
+const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,setChildClicked}) => {
   const isDesktop = useMediaQuery('(min-width: 600px');
 
   console.log("coordinate data from map : " + coordinates)
@@ -26,7 +26,9 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata }) =
             setCoordinates({ lat: e.center.lat, lng: e.center.lng });
             setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
           }}
-          onChildClick={''}
+          onChildClick={(child) => {
+            setChildClicked(child);
+          }}
         >
           {
             traveldata?.map((place, index) => {
@@ -58,6 +60,7 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata }) =
                       }
                       alt={place.name}
                     />
+                    <Rating size='small' value={Number(place.rating)} readOnly/>
                         </Paper>
                       )
                     }

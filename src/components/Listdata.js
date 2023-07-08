@@ -3,11 +3,10 @@ import React from 'react'
 import CardMedia from '@mui/material/CardMedia';
 import Travelcards from './cards/Travelcards';
 
-const Listdata = ({traveldata}) => {
-  const [optiontype, setoptiontype] = React.useState('restaurant');
-
+const Listdata = ({traveldata, childClicked ,optiontype,setoptiontype}) => {
+console.log(optiontype)
   // console.log(traveldata?.map((e) => {return e}))
-
+console.log({childClicked})
   const handleChange = (event) => {
     setoptiontype(event.target.value);
   };
@@ -21,9 +20,9 @@ const Listdata = ({traveldata}) => {
             label="Age"
             onChange={handleChange}
           >
-            <MenuItem value={'restaurant'}>restaurant</MenuItem>
-            <MenuItem value={'hotels'}>hotels</MenuItem>
-            <MenuItem value={'attraction'}>attraction</MenuItem>
+            <MenuItem value={'restaurants'}>Restaurants</MenuItem>
+            <MenuItem value={'hotels'}>Hotels</MenuItem>
+            <MenuItem value={'attractions'}>Attractions</MenuItem>
           </Select>
         </FormControl>
       </div>

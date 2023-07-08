@@ -3,7 +3,6 @@ import { Button, Card, CardActions, CardContent, Typography } from '@mui/materia
 import CardMedia from '@mui/material/CardMedia';
 
 const Travelcards = ( {cardsdata}) => {
-    console.log(cardsdata)
     const {name,address , website ,web_url } = cardsdata
   return (
 
