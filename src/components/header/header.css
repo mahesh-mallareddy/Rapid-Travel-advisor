@@ -1,0 +1,17 @@
+.header-navbar {
+    box-shadow: 0 4px 24px 0 rgba(34, 41, 47, 0.1);
+}
+
+.header-navbar {
+    margin: 1em 1em;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.bg-primary {
+
+    border-radius: 0.428rem;
+    background-color: #7367f0 !important;
+}
