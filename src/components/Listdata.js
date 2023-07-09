@@ -1,37 +1,35 @@
-import { Button, Card, CardActions, CardContent, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material'
+import { Box, Button, Card, CardActions, CardContent, CircularProgress, FormControl, Grid, InputLabel, MenuItem, Select, Typography } from '@mui/material'
 import React from 'react'
 import CardMedia from '@mui/material/CardMedia';
 import Travelcards from './cards/Travelcards';
 
-const Listdata = ({traveldata, childClicked ,optiontype,setoptiontype}) => {
-console.log(optiontype)
-  // console.log(traveldata?.map((e) => {return e}))
-console.log({childClicked})
-  const handleChange = (event) => {
-    setoptiontype(event.target.value);
-  };
+const Listdata = ({ traveldata, childClicked, optiontype, isShimmer }) => {
+  console.log(optiontype)
+  console.log({ childClicked })
+  
   return (
-    <>
-      <div>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel >type</InputLabel>
-          <Select
-            value={optiontype}
-            label="Age"
-            onChange={handleChange}
+      <Box sx={{ padding: '10px' }}>
+        
+        {isShimmer ? (
+          <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            sx={{ height: '600px' }}
           >
-            <MenuItem value={'restaurants'}>Restaurants</MenuItem>
-            <MenuItem value={'hotels'}>Hotels</MenuItem>
-            <MenuItem value={'attractions'}>Attractions</MenuItem>
-          </Select>
-        </FormControl>
-      </div>
-      <div>
-        {traveldata?.map((cardsdata)=>{
-          return <Travelcards cardsdata ={cardsdata}/>
-        })}
-      </div>
-    </>
+            <CircularProgress  color="success" size="5rem" />
+          </Box>
+        ) : ( <Box>
+            
+          <Grid container  sx={{ height: '75vh',overflow: 'scroll' }}>
+            {traveldata?.map((cardsdata) => {
+              return <Travelcards cardsdata={cardsdata} />
+            })}
+            </Grid>
+        </Box >
+        )}
+      </Box>
+
   )
 }
 
