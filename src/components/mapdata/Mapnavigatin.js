@@ -11,7 +11,7 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,set
     <div>
       <Box sx={{ height: '85vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: '' }}
+          bootstrapURLKeys={{ key: Process.env.GOOGLE_MAPS_API_KEY }}
           defaultCenter={coordinates}
           center={coordinates}
           defaultZoom={14}

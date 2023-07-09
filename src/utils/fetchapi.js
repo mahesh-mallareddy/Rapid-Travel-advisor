@@ -10,7 +10,7 @@ export const fetchUrl = async (optiontype,sw,ne) => {
         tr_longitude: ne.lng,
       },
       headers: {
-        'X-RapidAPI-Key': '3e46f89d7emsh0caf8e683397ffdp1de5b5jsn30e505a30cc7',
+        'X-RapidAPI-Key': Process.env.RAPIDAPI_TRAVEL_API_KEY,
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
       }
     });
