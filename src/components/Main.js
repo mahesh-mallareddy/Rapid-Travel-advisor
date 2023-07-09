@@ -15,10 +15,9 @@ const Main = () => {
     const [childClicked, setChildClicked] = useState(null);
     const [optiontype, setoptiontype] = useState('restaurants');
     const [isShimmer, setisShimmer] = useState(" ")
-    
+
     const [filteredPlaces, setFilteredPlaces] = useState([]);
     const [rating, setRating] = useState('')
-    console.log(traveldata.length)
     
     useEffect(() => {
         navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude } }) => {
