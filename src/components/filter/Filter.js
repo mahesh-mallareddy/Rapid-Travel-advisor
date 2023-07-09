@@ -18,7 +18,7 @@ const Filter = ({ optiontype, setoptiontype,rating ,setRating}) => {
                     Restaurants, Hotels &amp; Attractions around you
                 </Typography>
             </Box>
-            <Box display={'flex'}>
+            <Box display={'flex'} >
             <Box mx={5}>
                 <FormControl
                     sx={{ minWidth: 120, marginBottom: '20px' }}

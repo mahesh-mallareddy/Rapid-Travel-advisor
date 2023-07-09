@@ -4,9 +4,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Travelcards from './cards/Travelcards';
 
 const Listdata = ({ traveldata, childClicked, optiontype, isShimmer }) => {
-  console.log(optiontype)
-  console.log({ childClicked })
-  
+    
   return (
       <Box sx={{ padding: '10px' }}>
         

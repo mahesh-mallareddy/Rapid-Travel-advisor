@@ -14,16 +14,6 @@ const Header = ({setCoordinates}) => {
     const lat = autoComplete.getPlace().geometry.location.lat();
     const lng = autoComplete.getPlace().geometry.location.lng();
         setCoordinates({ lat, lng });
-
-    // if (autoComplete) {
-    //   if ( autoComplete.getPlace().geometry) {
-    //     const lat = autoComplete.getPlace().geometry.location.lat();
-    //     const lng = autoComplete.getPlace().geometry.location.lng();
-    //     setCoordinates({ lat, lng });
-    //   } else {
-    //     setShowDialog(true);
-    //   }
-    // }
   };
 
   return (
@@ -34,7 +24,7 @@ const Header = ({setCoordinates}) => {
             <Typography variant="h6"
               noWrap
               sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-              Tour advisor
+                 Travel Advisor
             </Typography>
 
             <Box >

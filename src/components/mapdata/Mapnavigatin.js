@@ -7,10 +7,6 @@ import styles from './Mapstyles.module.css';
 
 const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,setChildClicked}) => {
   const isDesktop = useMediaQuery('(min-width: 600px');
-
-  console.log("coordinate data from map : " + coordinates)
-  console.log(coordinates)
-  const isMobile = useMediaQuery('(min-width:600px)');
   return (
     <div>
       <Box sx={{ height: '85vh', width: '100%' }}>
@@ -18,11 +14,10 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,set
           bootstrapURLKeys={{ key: '' }}
           defaultCenter={coordinates}
           center={coordinates}
-          defaultZoom={12}
+          defaultZoom={14}
           margin={[50, 50, 50, 50]}
           options={''}
           onChange={(e) => {
-            console.log(e)
             setCoordinates({ lat: e.center.lat, lng: e.center.lng });
             setBounds({ ne: e.marginBounds.ne, sw: e.marginBounds.sw });
           }}
@@ -34,7 +29,6 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,set
             traveldata?.map((place, index) => {
               const lat = place.latitude;
               const lng = place.longitude;
-              // const rating = place.rating;
               if (lat && lng) {
                 return (
                   <div className={styles.markerContainer} lat={+lat} lng={+lng} key={index}>
@@ -56,7 +50,7 @@ const Mapnavigation = ({ setCoordinates, setBounds, coordinates, traveldata ,set
                           <img
                       style={{ cursor: 'pointer' }}
                       src={
-                        place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'
+                        place.photo ? place.photo.images.large.url : 'https://res.cloudinary.com/simplotel/image/upload/x_0,y_252,w_1125,h_632,r_0,c_crop,q_80,fl_progressive/w_550,f_auto,c_fit/icon-business-hotel-kundalahalli/IMG_4533_t7grur'
                       }
                       alt={place.name}
                     />
